@@ -1,10 +1,12 @@
 import express, { Request, Response } from "express";
 import { createClient } from "@libsql/client";
 import dotenv from "dotenv";
+import cors from "cors";
 
 dotenv.config();
 
 const app = express();
+app.use(cors()); // Use CORS middleware
 app.use(express.json());
 
 const client = createClient({
